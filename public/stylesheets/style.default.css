@@ -3560,4 +3560,24 @@ a.list-group-item.active > .badge,
   right: 15px;
 }
 
+.options{
+    padding: 0px;
+}
+.textInput{
+    margin-top: 10%;
+}
+.spaceAbove{
+    margin-top: 10%
+}
+.bigTextBox{
+    height: 23px;
+    width: 475px;
+    font-size:7pt;
+    text-align: start;
+}
+#submitButton1{
+    margin-left:375px;
+    margin-top: 75px;
+}
+
 
