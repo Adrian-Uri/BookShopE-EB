@@ -3564,7 +3564,7 @@ a.list-group-item.active > .badge,
     padding: 0px;
 }
 .textInput{
-    margin-top: 10%;
+    margin-top: 7%;
 }
 .spaceAbove{
     margin-top: 10%
@@ -3576,8 +3576,8 @@ a.list-group-item.active > .badge,
     text-align: start;
 }
 #submitButton1{
-    margin-left:375px;
-    margin-top: 75px;
+    margin-left:67%;
+    margin-top: 5%;
 }
 
 
