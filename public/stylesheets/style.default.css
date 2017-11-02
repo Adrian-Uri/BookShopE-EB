@@ -3580,4 +3580,6 @@ a.list-group-item.active > .badge,
     margin-top: 5%;
 }
 
-
+.emptyBox{
+  border-color: #080808;
+}
