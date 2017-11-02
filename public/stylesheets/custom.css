@@ -6,10 +6,11 @@
     z-index: 1;
     top: 154px;
     left: 0;
-    background-color: #111;
+    left: 0;
     overflow-x: hidden;
     padding-top: 20px;
     background-color: inherit;
+    margin-bottom: 60px;
 }
 .sidenav .closebtn {
     position: absolute;
@@ -29,3 +30,11 @@
 }.main {
      margin-left: 200px; /* Same as the width of the sidenav */
  }
+#footer{
+    position: fixed;
+    bottom: 0;
+}
+.cover{
+    height: 100px;
+    weight: 100px;
+}
