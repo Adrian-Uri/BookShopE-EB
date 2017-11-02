@@ -9,9 +9,14 @@
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/style.default.css")" id="theme-stylesheet">
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/custom.css")" id="theme-stylesheet">
+
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/drop.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.js")"></script>
+
     </head>
 
     <body>
+
         <header>
             <div id="top">
                 <div class="container">
@@ -64,14 +69,16 @@
         </header>
 
 
-        <div class="col-md-4">
+        <div class="col-md-4 sidenav">
                <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
-            <div class="w3-sidebar w3-bar-block" style="width:25%">
-                <a href="#" class="w3-bar-item"> <img src="@routes.Assets.at("images/covers/city1.jpg")" alt="image 1"></a>
-                <a href="#" class="w3-bar-item ">  <img src="@routes.Assets.at("images/covers/city2.jpg")" alt="image 2"></a>
-                <a href="#" class="w3-bar-item "><img src="@routes.Assets.at("images/covers/city3.jpg")" alt="image 3"></a>
+            <div class="w3-sidebar w3-bar-block">
+
+                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/city1.jpg")" alt="image 1">
+                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/city2.jpg")" alt="image 2">
+                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/city3.jpg")" alt="image 3">
             </div>
         </div>
+        <div class="main">
 
         <div class="col-md-3">
             <img src="@routes.Assets.at("images/covers/city2.jpg")" alt="image 2" width="100%">
@@ -84,10 +91,10 @@
                 <form class="Options" action="">
                     <p class="col-md-3" >Cover : </p>
                     <div class="col-md-3">
-                        <input type="radio" value="hard"  >Hard
+                        <input type="radio" value="hard"  name="cover">Hard
                     </div>
                     <div class="col-md-3">
-                        <input type="radio" value="paper"  >Paper
+                        <input type="radio" value="paper"  name="cover">Paper
                     </div>
                 </form>
             </div>
@@ -98,13 +105,13 @@
                 <form class="Options" action="">
                     <p class="col-md-3" >Size : </p>
                     <div class="col-md-3">
-                        <input type="radio" value="small"  >Small
+                        <input type="radio" value="small" name="size" >Small
                     </div>
                     <div class="col-md-3">
-                        <input type="radio" value="soft"  >Medium
+                        <input type="radio" value="soft" name="size" >Medium
                     </div>
                     <div class="col-md-3">
-                        <input type="radio" value="big"  >Big
+                        <input type="radio" value="big" name="size" >Big
                     </div>
                 </form>
             </div>
@@ -115,10 +122,10 @@
                 <form action="">
                     <p class="col-md-3" >Size : </p>
                     <select name="NPages">
-                        <option value="volvo">30</option>
-                        <option value="saab">50</option>
-                        <option value="fiat">75</option>
-                        <option value="audi">100</option>
+                        <option value="30">30</option>
+                        <option value="50">50</option>
+                        <option value="75">75</option>
+                        <option value="100">100</option>
                     </select>
                 </form>
             </div>
@@ -126,29 +133,19 @@
 
 
             <div  class="textInput row">
-                <p class="col-md-3">Custom message: </p>
+                <p class="col-md-3">Custom dedication: </p>
             </div>
 
             <div class="row">
                 <form class="col-md-12" action="">
                     <input class="bigTextBox" type="text" name="Message" value="Message"><br>
                     <br>
-                    <input id="submitButton1" type="submit" value="Add To Cart">
+                    <input id="btnAddToCart" type="submit" value="Add To Cart">
             </form>
             </div>
 
         </div>
-
-
-        <div style="margin-left:25%">
-
-        </div>
-   @*     <div id="mySidenav" class="sidenav">
-            <img src="@routes.Assets.at("images/covers/city1.jpg")" alt="image 1">
-            <img src="@routes.Assets.at("images/covers/city2.jpg")" alt="image 2">
-            <img src="@routes.Assets.at("images/covers/city3.jpg")" alt="image 3">
-        </div>*@
-
+        </div> <!-- main div -->
         <div id="footer">
             <div class="container">
                 <div class="col-md-12">
