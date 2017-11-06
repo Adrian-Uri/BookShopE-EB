@@ -9,19 +9,30 @@
 {
     margin-top:20px;
     margin-left:220px;
-    width:450px;
-    height:475px;
+    width: 360px;
+    height: 375px;
     background-color:white;
     border:3px dashed grey;
+    text-align: center;
 }
 .drop-text
 {
-    margin-top:50%;
     margin-left: 5%;
+    margin-top:30%;
+    color:grey;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.drop-text2
+{
+    margin-top:30%;
     color:grey;
     font-size:15px;
     font-weight:bold;
 }
+
+
 #drop-area img
 {
     max-width:200px;
