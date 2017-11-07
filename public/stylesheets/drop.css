@@ -1,39 +1,63 @@
-#wrapper
+body{
+    background-color: #b7fad9;
+}
+
+#footer{
+    position: fixed;
+    z-index: 1;
+}
+
+#designLeft
 {
     text-align:center;
-    margin-left: 15%;
-    padding:5%;
-    width:995px;
+    padding:0px;
+    margin: 1%;
 }
 #drop-area
 {
-    margin-top:20px;
-    margin-left:220px;
-    width: 360px;
-    height: 375px;
+    margin-top:30px;
+    margin-left:8%;
+    width:400px;
+    height:250px;
     background-color:white;
     border:3px dashed grey;
-    text-align: center;
 }
 .drop-text
 {
-    margin-left: 5%;
-    margin-top:30%;
+    margin-top:100px;
     color:grey;
-    font-size:12px;
+    font-size:25px;
     font-weight:bold;
 }
-
-.drop-text2
-{
-    margin-top:30%;
-    color:grey;
-    font-size:15px;
-    font-weight:bold;
-}
-
 
 #drop-area img
 {
     max-width:200px;
+}
+
+#mains div{
+    width:530px;
+    margin-left: 20px;
+    margin-right:20px;
+    float: left;
+}
+
+#designLeft div{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.radioBtns input{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 25px;
+}
+
+.clear{
+    clear: both;
+}
+
+#AddCart{
+    margin-top: 30px;
+    margin-bottom: 80px;
 }
