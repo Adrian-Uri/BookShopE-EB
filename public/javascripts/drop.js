@@ -1,11 +1,5 @@
 
-$("#btnAddToCart").onclick(function(){
-
-    alert("Add to cart");
-
-});
-
-$(document).ready(function()
+/*$(document).ready(function()
 {
     $("#drop-area").on('dragenter', function (e){
         e.preventDefault();
@@ -22,7 +16,7 @@ $(document).ready(function()
         var image = e.originalEvent.dataTransfer.files;
         var fileReader = new FileReader();
     });
-});
+});*/
 
 function createFormData(image)
 {
