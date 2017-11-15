@@ -3,10 +3,18 @@
 <html>
     <head>
         <title>DesigNote</title>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/style.default.css")" id="theme-stylesheet">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/style.default.css")" id="theme-stylesheet">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/custom.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/payment.css")">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/1.2.3/jquery.payment.min.js"></script>
+
+
     </head>
 
     <body>
@@ -42,24 +50,137 @@
             </div>*@
 
                 <!-- Nav bar menu-->
-            <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
+        <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
 
-                <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+            <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+                <div class="container" >
+                        <!-- Navbar Header -->
 
-                    <div class="container">
-                            <!-- Navbar Header -->
+                    <a class="navbar-brand home" href="@routes.Application.index()">
+                        <img src="@routes.Assets.at("images/logo1.png")" alt="DesigNote logo" class="hidden-xs hidden-sm">
 
-                        <a class="navbar-brand home" href="index.html">
-                            <img src="@routes.Assets.at("images/logo1.png")" alt="DesigNote logo" class="hidden-xs hidden-sm">
-                        </a>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="@routes.Application.index()">Home</a></li>
-                            <li><a href="@routes.CartController.transaction()">Cart</a></li>
-                        </ul>
-                    </div>
+                    </a>
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li><a href="@routes.Application.index()">Home</a></li>
+                        <li><a href="@routes.CartController.transaction()">Cart</a></li>
+
+                    </ul>
                 </div>
             </div>
+        </div>
         </header>
+
+          <!-- If you're using Stripe for payments -->
+        <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+        <div class="container">
+            <div class="col-xs-12 col-md-8" style="font-size: 12pt; line-height: 2em;">
+                <p><h1>Notebook features:</h1>
+                <ul>
+                    <li>feature 1</li>
+                    <li>feature 2</li>
+                    <li>feature 3</li>
+                    <li>feature 4</li>
+
+                </ul>
+                </p>
+            </div>
+            <div class="row">
+                    <!-- You can make it whatever width you want. I'm making it full width
+             on <= small devices and 4/12 page width on >= medium devices -->
+                <div class="col-xs-12 col-md-4">
+
+
+                        <!-- CREDIT CARD FORM STARTS HERE -->
+                    <div class="panel panel-default credit-card-box">
+                        <div class="panel-heading display-table" >
+                            <div class="row display-tr" >
+                                <h3 class="panel-title display-td" >Payment Details</h3>
+                                <div class="display-td" >
+                                    <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <form role="form" id="payment-form" method="POST" action="javascript:void(0);">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group">
+                                            <label for="cardNumber">CARD NUMBER</label>
+                                            <div class="input-group">
+                                                <input
+                                                type="tel"
+                                                class="form-control"
+                                                name="cardNumber"
+                                                placeholder="Valid Card Number"
+                                                autocomplete="cc-number"
+                                                required autofocus
+                                                />
+                                                <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-7 col-md-7">
+                                        <div class="form-group">
+                                            <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+                                            <input
+                                            type="tel"
+                                            class="form-control"
+                                            name="cardExpiry"
+                                            placeholder="MM / YY"
+                                            autocomplete="cc-exp"
+                                            required
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-5 col-md-5 pull-right">
+                                        <div class="form-group">
+                                            <label for="cardCVC">CV CODE</label>
+                                            <input
+                                            type="tel"
+                                            class="form-control"
+                                            name="cardCVC"
+                                            placeholder="CVC"
+                                            autocomplete="cc-csc"
+                                            required
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group">
+                                            <label for="couponCode">COUPON CODE</label>
+                                            <input type="text" class="form-control" name="couponCode" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <button class="subscribe btn btn-success btn-lg btn-block" type="button">Pay for your order</button>
+                                    </div>
+                                </div>
+                                <div class="row" style="display:none;">
+                                    <div class="col-xs-12">
+                                        <p class="payment-errors"></p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                        <!-- CREDIT CARD FORM ENDS HERE -->
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
         <footer>
         </footer>
     </body>

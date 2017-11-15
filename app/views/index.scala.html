@@ -165,8 +165,12 @@
 
 
             <div id="AddCart" class="col-md-6">
+                <form action="@routes.CartController.transaction()">
+                    <button id="btnAddToCart" type="submit" value="Add To Cart" >
+                    Buy
+                    </button>
+                </form>
 
-                <input id="btnAddToCart" type="submit" value="Add To Cart" href="@routes.CartController.transaction()">
 
 
             </div>
