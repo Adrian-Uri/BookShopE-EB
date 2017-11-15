@@ -58,12 +58,15 @@
                         <div class="container" >
                             <!-- Navbar Header -->
 
-                        <a class="navbar-brand home" href="index.html">
+                        <a class="navbar-brand home" href="@routes.Application.index()">
                             <img src="@routes.Assets.at("images/logo1.png")" alt="DesigNote logo" class="hidden-xs hidden-sm">
+
                         </a>
                         <ul class="nav navbar-nav navbar-right">
+
                             <li><a href="@routes.Application.index()">Home</a></li>
                             <li><a href="@routes.CartController.transaction()">Cart</a></li>
+
                         </ul>
                     </div>
                 </div>
@@ -111,7 +114,9 @@
 
 
             <div id="designRight"   class="col-md-3" >
+
                 <h3>Notebook Features</h3>
+
 
                 <div  class="row">
                     <form class="Options" action="">
@@ -158,13 +163,12 @@
 
             </div>
 
-            <div id="AddCart" class="col-sm-8">
-                <form action="@routes.CartController.transaction()">
-                    <input type="submit" value="Buy" />
-                </form>
-              @*  <button id="btnAddToCart"  value="Add To Cart" >
-                    <a href="@routes.CartController.transaction()">Buy</a>
-                </button>*@
+
+            <div id="AddCart" class="col-md-6">
+
+                <input id="btnAddToCart" type="submit" value="Add To Cart" href="@routes.CartController.transaction()">
+
+
             </div>
 
         </div> <!-- main div -->
