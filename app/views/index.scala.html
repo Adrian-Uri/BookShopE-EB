@@ -81,75 +81,85 @@
         </div>
 
 
-        <div  class="col-md-3 wrapper">
+        <div id="mains" class="main">
+
+            <div id="designLeft"  class="col-md-3">
+
+                <input type="file">
                 <div id="drop-area">
-                    <h3 class="drop-text2">Drop and Drag or Select a file</h3>
-                    <input class="drop-text" type="file">
+                    <h3 class="drop-text">Drag and Drop Image Here</h3>
                 </div>
-        </div>
 
-        <div class="col-md-5 features">
-            <h3>Book Features</h3>
+                <div id="pages" class="row">
+                    <form action="">
+                        <p class="col-md-12" >Number of pages :
+                            <select name="NPages">
+                                <option value="30">30</option>
+                                <option value="50">50</option>
+                                <option value="75">75</option>
+                                <option value="100">100</option>
+                            </select>
+                        </p>
+                    </form>
+                </div>
 
-            <div  class="row">
-                <form class="Options" action="">
-                    <p class="col-md-3" >Cover : </p>
-                    <div class="col-md-3">
-                        <input type="radio" value="hard"  name="cover">Hard
-                    </div>
-                    <div class="col-md-3">
-                        <input type="radio" value="paper"  name="cover">Paper
-                    </div>
-                </form>
-            </div>
-
-            <hr>
-
-            <div  class="row">
-                <form class="Options" action="">
-                    <p class="col-md-3" >Size : </p>
-                    <div class="col-md-3">
-                        <input type="radio" value="small" name="size" >Small
-                    </div>
-                    <div class="col-md-3">
-                        <input type="radio" value="soft" name="size" >Medium
-                    </div>
-                    <div class="col-md-3">
-                        <input type="radio" value="big" name="size" >Big
-                    </div>
-                </form>
-            </div>
-
-            <hr>
-
-            <div class="row">
-                <form action="">
-                    <p class="col-md-3" >Size : </p>
-                    <select name="NPages">
-                        <option value="30">30</option>
-                        <option value="50">50</option>
-                        <option value="75">75</option>
-                        <option value="100">100</option>
-                    </select>
-                </form>
             </div>
 
 
+            <div id="designRight"   class="col-md-3" >
+                <h3>Book Features</h3>
 
-            <div  class="textInput row">
-                <p class="col-md-3">Custom dedication: </p>
+                <div  class="row">
+                    <form class="Options" action="">
+                        <h5 class="col-md-3" >Cover : </h5>
+                        <div class="radioBtns">
+                            <input type="radio" value="hard"  name="cover">Hard
+                            <input type="radio" value="soft"  name="cover">Soft
+                        </div>
+                    </form>
+                </div>
+
+                <hr>
+
+                <div  class="row">
+                    <form class="Options" action="">
+                        <h5 class="col-md-3" >Size : </h5>
+                        <div class="radioBtns">
+                            <input type="radio" value="a6" name="size" >Small A6
+                            <input type="radio" value="a5" name="size" >Medium A5
+                            <input type="radio" value="a4" name="size" >Large A4
+                        </div>
+                    </form>
+                </div>
+
+                <div  class="row">
+                    <form class="Options" action="">
+                        <h5 class="col-md-3" >Paper : </h5>
+                        <div class="radioBtns">
+                            <input type="radio" value="blank" name="paper" >Blank
+                            <input type="radio" value="lined" name="paper" >Lined
+                            <input type="radio" value="grid" name="paper" >Grid
+                        </div>
+                    </form>
+                </div>
+
+                <div id="phrase" class="row">
+                    <h5 class="col-md-5">Customized Dedication: </h5>
+                    <form class="col-md-12" action="">
+                        <input class="bigTextBox" type="text" name="Message" value="Type your message here..."><br>
+                    </form>
+                </div>
+
+                <div class="clear"></div>
+
             </div>
 
-            <div class="row">
-                <form class="col-md-12" action="">
-                    <input class="bigTextBox" type="text" name="Message" value="Message"><br>
-                    <br>
-                    <input id="btnAddToCart" type="submit" value="Add To Cart">
-            </form>
+            <div id="AddCart" class="col-md-6">
+                <input id="AddToCart" type="submit" value="Add To Cart">
             </div>
 
-        </div>
         </div> <!-- main div -->
+
         <div id="footer">
             <div class="container">
                 <div class="col-md-12">
