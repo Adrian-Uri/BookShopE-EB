@@ -21,7 +21,7 @@
     <body>
 
         <header>
-            <div id="top">
+            @*<div id="top">
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-5 contact">
@@ -49,14 +49,13 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>*@
 
                 <!-- Nav bar menu-->
             <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
 
                 <div class="navbar navbar-default yamm" role="navigation" id="navbar">
-
-                    <div class="container" >
+                        <div class="container" >
                             <!-- Navbar Header -->
 
                         <a class="navbar-brand home" href="index.html">
@@ -72,30 +71,32 @@
         </header>
 
 
-        <div class="col-md-4 sidenav">
-               <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
+        <div class="col-md-4 sidenav" >
+
             <div class="w3-sidebar w3-bar-block">
                 
-                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/city1.jpg")" alt="image 1">
-                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/city2.jpg")" alt="image 2">
-                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/city3.jpg")" alt="image 3">
+                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/city1.jpg")" alt="image 1" ondragstart="dragStart(event)">
+                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/city2.jpg")" alt="image 2" ondragstart="dragStart(event)">
+                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/city3.jpg")" alt="image 3" ondragstart="dragStart(event)">
             </div>
         </div>
 
 
         <div id="mains" class="main">
 
-            <div id="designLeft"  class="col-md-3">
+            <div id="designLeft"  >
 
                 <input type="file" id="inputCover"/>
-                <div id="drop-area" >
-                    <h3 class="drop-text">Drag and Drop Image Here</h3>
-                 <img id="userImage" src="#" alt=""/>
-                </div>
 
-                <div id="pages" class="row">
+                    <div id="drop-area" ondrop="handleFileSelect(event))"  ondragover="handleDragOver(event)" >
+                   <img id="userImage" src="#" alt=""/>
+                    </div>
+
+
+
+                <div id="pages" id="numOfPages">
                     <form action="">
-                        <p class="col-md-12" >Number of pages :
+                        <p >Number of pages :
                             <select name="NPages">
                                 <option value="30">30</option>
                                 <option value="50">50</option>
@@ -149,7 +150,7 @@
                 <div id="phrase" class="row">
                     <h5 class="col-md-5">Customized Dedication: </h5>
                     <form class="col-md-12" action="">
-                        <input id="dedicationField"  onclick="eraseHint()" class="bigTextBox" type="text" name="Message" value="Type your message here..."><br>
+                        <input id="dedicationField"   class="bigTextBox" type="text" name="Message" value="Type your message here..."><br>
                     </form>
                 </div>
 
@@ -157,8 +158,13 @@
 
             </div>
 
-            <div id="AddCart" class="col-md-6">
-                <input id="btnAddToCart" type="submit" value="Add To Cart" href="@routes.CartController.transaction()">
+            <div id="AddCart" class="col-sm-8">
+                <form action="@routes.CartController.transaction()">
+                    <input type="submit" value="Buy" />
+                </form>
+              @*  <button id="btnAddToCart"  value="Add To Cart" >
+                    <a href="@routes.CartController.transaction()">Buy</a>
+                </button>*@
             </div>
 
         </div> <!-- main div -->
