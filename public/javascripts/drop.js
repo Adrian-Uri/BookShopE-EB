@@ -20,7 +20,7 @@ $(document).ready(function()
         $(this).css('background', '#D8F9D3');
         e.preventDefault();
         var image = e.originalEvent.dataTransfer.files;
-        createFormData(image);
+        var fileReader = new FileReader();
     });
 });
 
@@ -33,7 +33,7 @@ function createFormData(image)
 
 function uploadFormData(formData)
 {
-    $.ajax({
+    /*$.ajax({
         url: "upload_image.php",
         type: "POST",
         data: formData,
@@ -42,5 +42,6 @@ function uploadFormData(formData)
         processData: false,
         success: function(data){
             $('#drop-area').html(data);
-        }});
+        }});*/
+
 }

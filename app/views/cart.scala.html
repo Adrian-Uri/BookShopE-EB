@@ -53,8 +53,8 @@
                             <img src="@routes.Assets.at("images/logo.png")" alt="DesigNote logo" class="hidden-xs hidden-sm">
                         </a>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="index.scala.html">Home</a></li>
-                            <li><a href="cart.scala.html">Cart</a></li>
+                            <li><a href="@routes.Application.index()">Home</a></li>
+                            <li><a href="@routes.CartController.transaction()">Cart</a></li>
                         </ul>
                     </div>
                 </div>
