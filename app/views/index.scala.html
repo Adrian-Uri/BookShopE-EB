@@ -1,4 +1,10 @@
+@(notebookForm: Form[utils.Notebook])
+@import utils.Notebook
+@import play.data.Form
+@import helper._
 
+
+@Main(){
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/html">
@@ -115,7 +121,7 @@
 
             <div id="designRight"   class="col-md-3" >
 
-                <h3>Notebook Features</h3>
+                <h3>utils.Notebook Features</h3>
 
 
                 <div  class="row">
@@ -166,13 +172,12 @@
 
             <div id="AddCart" class="col-md-6">
                 <form action="@routes.CartController.transaction()">
-                    <button id="btnAddToCart" type="submit" value="Add To Cart" >
+                    <input type="submit" value="buy" id="btnAddToCart">
+
+                    @*<button id="btnAddToCart" type="submit" value="Add To Cart" >
                     Buy
-                    </button>
+                    </button>*@
                 </form>
-
-
-
             </div>
 
         </div> <!-- main div -->
@@ -193,3 +198,4 @@
 </html>
 
 
+}
