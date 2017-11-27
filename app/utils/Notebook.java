@@ -2,12 +2,17 @@ package utils;
 
 
 public class Notebook {
-    public int numOfPages= 90;
+    public Integer numOfPages= 90;
     public pageSize size = pageSize.A5;
     public String dedication = "";
     public paperType paper = paperType.GRID;
 
-    Notebook(){
+    Notebook(Integer numOfPages, pageSize size, paperType paper, String dedication){
+        this.numOfPages = numOfPages;
+        this.size = size;
+        this.paper= paper;
+        this.dedication = dedication;
+
 
     }
 
