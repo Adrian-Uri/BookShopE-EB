@@ -12,7 +12,9 @@ public class Notebook {
         this.size = size;
         this.paper= paper;
         this.dedication = dedication;
+    }
 
+    public Notebook(){
 
     }
 
