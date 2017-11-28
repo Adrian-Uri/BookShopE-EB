@@ -1,3 +1,8 @@
+@(notebookForm: DynamicForm)
+
+@import utils.Notebook
+@import play.data.Form
+
 
 <html xmlns="http://www.w3.org/1999/html">
     <head id="head">
@@ -113,9 +118,16 @@
                    <img id="userImage" src="#" alt=""/>
                     </div>
 
+            </div>
 
-                <div id="numOfPages">
-                    <form action="">
+
+
+            <div id="designRight"   class="col-md-3" >
+
+                <h3>Notebook Features</h3>
+                <form action="@routes.CartController.transaction()">
+                    <div id="pages" id="numOfPages">
+
                         <p >Number of pages :
                                 <select name="NPages">
                                     <option value="30">30</option>
@@ -124,67 +136,56 @@
                                     <option value="100">100</option>
                                 </select>
                         </p>
-                    </form>
-                </div>
-
-                <div id="AddCart">
-                    <form action="@routes.CartController.transaction()">
-                        <button id="btnAddToCart" type="submit" value="Add To Cart" >
-                            Buy
-                        </button>
-                    </form>
-                </div>
-
-            </div>
 
 
-            <div id="designRight"   class="col-md-3" >
+                    </div>
 
-                <h3>Notebook Features</h3>
-
-
-                <div  class="row">
-                    <form class="Options" action="cart.scala.html" method="post">
+                   <div  class="row">
                         <h5 class="col-md-3" >Cover : </h5>
                         <div class="radioBtns">
                             <input type="radio" value="hard"  name="cover">Hard
                             <input type="radio" value="soft"  name="cover">Soft
                         </div>
-                    </form>
-                </div>
-                <hr>
-                <div  class="row">
-                   <form class="Options" action="cart.scala.html" method="post">
-                        <h5 class="col-md-3" >Size : </h5>
-                        <div class="radioBtns">
-                            <input type="radio" value="a6" name="size" >Small A6
-                            <input type="radio" value="a5" name="size" >Medium A5
-                            <input type="radio" value="a4" name="size" >Large A4
-                        </div>
-                    </form>
-                </div>
-                <hr>
-                <div  class="row">
-                    <form class="Options" action="cart.scala.html">
-                        <h5 class="col-md-3" >Paper : </h5>
-                        <div class="radioBtns">
-                            <input type="radio" value="blank" name="paper" >Blank
-                            <input type="radio" value="lined" name="paper" >Lined
-                            <input type="radio" value="grid" name="paper" >Grid
-                        </div>
-                    </form>
-                </div>
 
-                <div id="phrase" class="row">
-                    <h5 class="col-md-5">Customized Dedication: </h5>
-                    <form class="col-md-12" action="">
-                        <input id="dedicationField"   class="bigTextBox" type="text" name="Message" value="Type your message here..."><br>
-                    </form>
-                </div>
 
-                <div class="clear"></div>
+                    </div>
+                    <div  class="row">
+
+                            <h5 class="col-md-3" >Size : </h5>
+                            <div class="radioBtns">
+                                <input type="radio" value="a6" name="size" >Small A6
+                                <input type="radio" value="a5" name="size" >Medium A5
+                                <input type="radio" value="a4" name="size" label="Large A4">Large A4
+                            </div>
+
+
+                    </div>
+                    <div  class="row">
+                            <h5 class="col-md-3" >Paper : </h5>
+                            <div class="radioBtns">
+                                <input type="radio" value="blank" name="paper" >Blank
+                                <input type="radio" value="lined" name="paper" >Lined
+                                <input type="radio" value="grid" name="paper" >Grid
+                            </div>
+
+                    </div>
+
+                    <div id="phrase" class="row">
+                        <h5 class="col-md-5">Customized Dedication: </h5>
+                        <form class="col-md-12" action="">
+                            <input id="dedicationField"   class="bigTextBox" type="text" name="Message" value="Type your message here..."><br>
+                        </form>
+                    </div>
+
+                    <div id="AddCart" class="col-md-6">
+                        <input type="submit" value="Buy" id="btnAddToCart">
+
+                    </div>
+                </form>
 
             </div>
+
+
 
         </div> <!-- main div -->
 
@@ -204,5 +205,4 @@
 
     </body>
 </html>
-
 

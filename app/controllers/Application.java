@@ -1,25 +1,24 @@
 package controllers;
 
+import com.google.inject.Inject;
 import play.*;
-import play.data.*;
+
+import play.data.DynamicForm;
+import play.data.Form;
+import play.data.Form.*;
+import play.data.FormFactory;
 import play.mvc.*;
-
+import utils.*;
 import views.html.*;
-
-import models.*;
-
-import javax.inject.Inject;
+import static play.data.Form.form;
 
 public class Application extends Controller {
 
-    private final Form<WidgetData> form;
-    private final List<Widget> widgets;
- 
-    Form<Book> bookForm = formFactory.form(Book.class);
+        public Result index() {
 
-    public Result index() {
-        return ok(index.render());
-
+         DynamicForm notebookForm = Form.form().bindFromRequest();
+         //
+         return ok(index.render(notebookForm));
     }
 
 
