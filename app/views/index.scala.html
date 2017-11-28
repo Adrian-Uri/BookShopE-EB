@@ -1,7 +1,11 @@
-@(notebookForm: DynamicForm)
+@(notebookForm: Form[Notebook])
 
-@import utils.Notebook
+
+@import models.Notebook
 @import play.data.Form
+
+@import views.html.helper.form
+@import controllers.CartController
 
 
 <html xmlns="http://www.w3.org/1999/html">
@@ -77,15 +81,49 @@
             <div id="designLeft"  >
                 <input type="file" id="inputCover"/>
                     <div id="drop-area" ondragover="allowDrop(event)" ondrop="ondropImage(event)">
-
-                   <img id="userImage" src="@routes.Assets.at("images/covers/cover1.jpg")" alt=""/>
+                   <img id="userImage" src="@routes.Assets.at("images/covers/cover01.jpg")" alt=""/>
                     </div>
             </div>
 
             <div id="designRight"   class="col-md-3" >
                 <h3>Notebook Features</h3>
-                <form action="@routes.CartController.transaction()">
-                    <div id="pages" id="numOfPages">
+               @helper.form(action = routes.CartController.postCart()){
+                        @helper.inputRadioGroup(
+                            notebookForm("numOfPages"),
+                            options = Seq("30"-> "30", "50"->"50", "75"->"75", "100"->"100"),
+                            '_label -> "Number of pages"
+                        )
+                       @helper.inputRadioGroup(
+                           notebookForm("size"),
+                           options = Seq("A6"-> "Small A6", "A5"->"Medium A5", "A4"->"Large A4"),
+                           '_label -> "Size"
+                       )
+                       @helper.inputRadioGroup(
+                           notebookForm("cover"),
+                           options = Seq("HARD"-> "HARD", "SOFT"->"SOFT"),
+                           '_label -> "Type of peper"
+                       )
+                        @helper.inputRadioGroup(
+                       notebookForm("paper"),
+                       options = Seq("BLANK"-> "BLANK", "LINED"->"LINED", "GRID"->"GRID"),
+                       '_label -> "Type of paper"
+                     )
+                        @helper.inputText(
+                            notebookForm("dedication"),
+                            '_label -> "Your own dedication"
+
+                        )
+                   <div id="AddCart" >
+                       <input type="submit" value="Buy" id="btnAddToCart">
+                   </div>
+
+                   <script>
+                       $("#btnAddToCart").hover( function() {
+                           var src = $("userImage").attr("src");
+                           notebookForm.fill("imageId", src)
+                       });
+                   </script>
+                  @*  <div  id="numOfPages">
                         <p >Number of pages :
                                 <select name="NPages">
                                     <option value="30">30</option>
@@ -101,10 +139,8 @@
                             <input type="radio" value="hard"  name="cover">Hard
                             <input type="radio" value="soft"  name="cover">Soft
                         </div>
-
                     </div>
                     <div  class="row">
-
                             <h5 class="col-md-3" >Size : </h5>
                             <div class="radioBtns">
                                 <input type="radio" value="a6" name="size" >Small A6
@@ -120,19 +156,19 @@
                                 <input type="radio" value="lined" name="paper" >Lined
                                 <input type="radio" value="grid" name="paper" >Grid
                             </div>
-
                     </div>
-
                     <div id="phrase" class="row">
                         <h5 class="col-md-5">Customized Dedication: </h5>
-                        <form class="col-md-12" action="">
-                            <input id="dedicationField"   class="bigTextBox" type="text" name="Message" value="Type your message here..."><br>
-                        </form>
                     </div>
-                    <div id="AddCart" class="col-md-6">
-                        <input type="submit" value="Buy" id="btnAddToCart">
-                    </div>
-                </form>
+                    <div class="row">
+                        <input id="dedicationField"   class="bigTextBox" type="text" name="Message" value="@notebookForm("dedication")"><br>
+
+                        <div id="AddCart" class="col-md-6">
+                            <input type="submit" value="Buy" id="btnAddToCart">
+                        </div>
+                    </div>*@
+               </div>
+               } @*end of form*@
 
             </div>
 
