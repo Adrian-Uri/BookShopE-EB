@@ -23,36 +23,6 @@
     <body id="body">
 
         <header>
-            @*<div id="top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-5 contact">
-                            <p class="hidden-sm hidden-xs">
-                                Contact us on +48 999 999 999 or
-                                help@@designote.com
-                            </p>
-                            <p class="hidden-md hidden-lg"><a href="#" data-animate-hover="pulse">
-                                <i class="fa fa-phone"></i></a>
-                                <a href="#" data-animate-hover="pulse">
-                                    <i class="fa fa-envelope"></i></a>
-                        </div>
-                        <div class="col-xs-7">
-                            <div class="social">
-                                <a href="https://www.facebook.com/DesigNote-137579040328140/" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
-                                <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
-                                <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
-                                <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
-                            </div>
-
-                            <div class="login">
-                                <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i> <span class="hidden-xs text-uppercase">Sign in</span></a>
-                                <a href="customer-register.html"><i class="fa fa-user"></i> <span class="hidden-xs text-uppercase">Sign up</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>*@
-
                 <!-- Nav bar menu-->
             <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
 
@@ -62,11 +32,9 @@
 
                         <a class="navbar-brand home" href="@routes.Application.index()">
                             <img src="@routes.Assets.at("images/logo1.png")" alt="DesigNote logo" class="hidden-xs hidden-sm">
-
                         </a>
                         <ul class="nav navbar-nav navbar-right">
-
-                            <li><a href="@routes.Application.index()">Home</a></li>
+                        <li><a href="@routes.Application.index()">Home</a></li>
                             <li><a href="@routes.CartController.transaction()">Cart</a></li>
 
                         </ul>
@@ -79,26 +47,26 @@
         <div class="col-md-4 sidenav" >
 
             <div class="w3-sidebar w3-bar-block" id="covers">
-                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/cover01.jpg")" alt="image01" ondragstart="dragStart(event)">
-                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/cover02.jpg")" alt="image02" ondragstart="dragStart(event)">
-                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/cover03.jpg")" alt="image03" ondragstart="dragStart(event)">
-                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/cover04.jpg")" alt="image04" ondragstart="dragStart(event)">
-                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/cover05.jpg")" alt="image05" ondragstart="dragStart(event)">
-                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/cover06.jpg")" alt="image06" ondragstart="dragStart(event)">
-                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/cover07.jpg")" alt="image07" ondragstart="dragStart(event)">
-                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/cover08.jpg")" alt="image08" ondragstart="dragStart(event)">
-                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/cover09.jpg")" alt="image09" ondragstart="dragStart(event)">
-                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/cover10.jpg")" alt="image10" ondragstart="dragStart(event)">
-                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/cover11.jpg")" alt="image11" ondragstart="dragStart(event)">
-                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/cover12.jpg")" alt="image12" ondragstart="dragStart(event)">
-                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/cover13.jpg")" alt="image13" ondragstart="dragStart(event)">
-                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/cover14.jpg")" alt="image14" ondragstart="dragStart(event)">
-                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/cover15.jpg")" alt="image15" ondragstart="dragStart(event)">
-                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/cover16.jpg")" alt="image16" ondragstart="dragStart(event)">
-                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/cover17.jpg")" alt="image17" ondragstart="dragStart(event)">
-                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/cover18.jpg")" alt="image18" ondragstart="dragStart(event)">
-                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/cover19.jpg")" alt="image19" ondragstart="dragStart(event)">
-                <img class="cover" draggable="true" src="@routes.Assets.at("images/covers/cover20.jpg")" alt="image20" ondragstart="dragStart(event)">
+                <img class="cover ui-draggable" draggable="true" src="@routes.Assets.at("images/covers/cover01.jpg")" alt="image01" ondragstart="drag(event, this)">
+                <img class="cover ui-draggable" draggable="true" src="@routes.Assets.at("images/covers/cover02.jpg")" alt="image02" ondragstart="drag(event, this)">
+                <img class="cover ui-draggable" draggable="true" src="@routes.Assets.at("images/covers/cover03.jpg")" alt="image03" ondragstart="drag(event, this)">
+                <img class="cover ui-draggable" draggable="true" src="@routes.Assets.at("images/covers/cover04.jpg")" alt="image04" ondragstart="drag(event, this)">
+                <img class="cover ui-draggable" draggable="true" src="@routes.Assets.at("images/covers/cover05.jpg")" alt="image05" ondragstart="drag(event, this)">
+                <img class="cover ui-draggable" draggable="true" src="@routes.Assets.at("images/covers/cover06.jpg")" alt="image06" ondragstart="drag(event, this)">
+                <img class="cover ui-draggable" draggable="true" src="@routes.Assets.at("images/covers/cover07.jpg")" alt="image07" ondragstart="drag(event, this)">
+                <img class="cover ui-draggable" draggable="true" src="@routes.Assets.at("images/covers/cover08.jpg")" alt="image08" ondragstart="drag(event, this)">
+                <img class="cover ui-draggable" draggable="true" src="@routes.Assets.at("images/covers/cover09.jpg")" alt="image09" ondragstart="drag(event, this)">
+                <img class="cover ui-draggable" draggable="true" src="@routes.Assets.at("images/covers/cover10.jpg")" alt="image10" ondragstart="drag(event, this)">
+                <img class="cover ui-draggable" draggable="true" src="@routes.Assets.at("images/covers/cover11.jpg")" alt="image11" ondragstart="drag(event, this)">
+                <img class="cover ui-draggable" draggable="true" src="@routes.Assets.at("images/covers/cover12.jpg")" alt="image12" ondragstart="drag(event, this)">
+                <img class="cover ui-draggable" draggable="true" src="@routes.Assets.at("images/covers/cover13.jpg")" alt="image13" ondragstart="drag(event, this)">
+                <img class="cover ui-draggable" draggable="true" src="@routes.Assets.at("images/covers/cover14.jpg")" alt="image14" ondragstart="drag(event, this)">
+                <img class="cover ui-draggable" draggable="true" src="@routes.Assets.at("images/covers/cover15.jpg")" alt="image15" ondragstart="drag(event, this)">
+                <img class="cover ui-draggable" draggable="true" src="@routes.Assets.at("images/covers/cover16.jpg")" alt="image16" ondragstart="drag(event, this)">
+                <img class="cover ui-draggable" draggable="true" src="@routes.Assets.at("images/covers/cover17.jpg")" alt="image17" ondragstart="drag(event, this)">
+                <img class="cover ui-draggable" draggable="true" src="@routes.Assets.at("images/covers/cover18.jpg")" alt="image18" ondragstart="drag(event, this)">
+                <img class="cover ui-draggable" draggable="true" src="@routes.Assets.at("images/covers/cover19.jpg")" alt="image19" ondragstart="drag(event, this)">
+                <img class="cover ui-draggable" draggable="true" src="@routes.Assets.at("images/covers/cover20.jpg")" alt="image20" ondragstart="drag(event, this)">
 
             </div>
         </div>
@@ -107,23 +75,17 @@
         <div id="mains" class="main">
 
             <div id="designLeft"  >
-
                 <input type="file" id="inputCover"/>
+                    <div id="drop-area" ondragover="allowDrop(event)" ondrop="ondropImage(event)">
 
-                    <div id="drop-area" ondrop="handleFileSelect(event))"  ondragover="handleDragOver(event)" >
-                   <img id="userImage" src="#" alt=""/>
+                   <img id="userImage" src="@routes.Assets.at("images/covers/cover1.jpg")" alt=""/>
                     </div>
-
             </div>
 
-
-
             <div id="designRight"   class="col-md-3" >
-
                 <h3>Notebook Features</h3>
                 <form action="@routes.CartController.transaction()">
                     <div id="pages" id="numOfPages">
-
                         <p >Number of pages :
                                 <select name="NPages">
                                     <option value="30">30</option>
@@ -132,17 +94,13 @@
                                     <option value="100">100</option>
                                 </select>
                         </p>
-
-
-                    </div>
-
-                   <div  class="row">
+               </div>
+               <div  class="row">
                         <h5 class="col-md-3" >Cover : </h5>
                         <div class="radioBtns">
                             <input type="radio" value="hard"  name="cover">Hard
                             <input type="radio" value="soft"  name="cover">Soft
                         </div>
-
 
                     </div>
                     <div  class="row">
@@ -153,7 +111,6 @@
                                 <input type="radio" value="a5" name="size" >Medium A5
                                 <input type="radio" value="a4" name="size" label="Large A4">Large A4
                             </div>
-
 
                     </div>
                     <div  class="row">
@@ -172,10 +129,8 @@
                             <input id="dedicationField"   class="bigTextBox" type="text" name="Message" value="Type your message here..."><br>
                         </form>
                     </div>
-
                     <div id="AddCart" class="col-md-6">
                         <input type="submit" value="Buy" id="btnAddToCart">
-
                     </div>
                 </form>
 
@@ -190,7 +145,7 @@
             <div class="container">
                 <div class="col-md-12">
                     <p class="pull-left">&copy; 2017 DesigNote</p>
-                    <p class="pull-right">Template by <a href="https://bootstrapious.com">Bootstrapious</a> & <a href="https://fity.cz">Fity.cz</a>with support from <a href="https://kakusei.cz">Kakusei</a>
+                    <p class="pull-right">Footer by <a href="https://bootstrapious.com">Bootstrapious</a> & <a href="https://fity.cz">Fity.cz</a>with support from <a href="https://kakusei.cz">Kakusei</a>
                             <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
                     </p>
 
