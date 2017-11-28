@@ -31,7 +31,7 @@
             <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
 
                 <div class="navbar navbar-default yamm" role="navigation" id="navbar">
-                        <div class="container" >
+                    <div class="container" >
                             <!-- Navbar Header -->
 
                         <a class="navbar-brand home" href="@routes.Application.index()">
@@ -80,6 +80,7 @@
 
             <div id="designLeft"  >
                 <input type="file" id="inputCover"/>
+
                     <div id="drop-area" ondragover="allowDrop(event)" ondrop="ondropImage(event)">
                    <img id="userImage" src="@routes.Assets.at("images/covers/cover01.jpg")" alt=""/>
                     </div>
@@ -125,12 +126,12 @@
                    </script>
                   @*  <div  id="numOfPages">
                         <p >Number of pages :
-                                <select name="NPages">
-                                    <option value="30">30</option>
-                                    <option value="50">50</option>
-                                    <option value="75">75</option>
-                                    <option value="100">100</option>
-                                </select>
+                            <select name="NPages">
+                                <option value="30">30</option>
+                                <option value="50">50</option>
+                                <option value="75">75</option>
+                                <option value="100">100</option>
+                            </select>
                         </p>
                </div>
                <div  class="row">
@@ -150,12 +151,14 @@
 
                     </div>
                     <div  class="row">
+
                             <h5 class="col-md-3" >Paper : </h5>
                             <div class="radioBtns">
                                 <input type="radio" value="blank" name="paper" >Blank
                                 <input type="radio" value="lined" name="paper" >Lined
                                 <input type="radio" value="grid" name="paper" >Grid
                             </div>
+
                     </div>
                     <div id="phrase" class="row">
                         <h5 class="col-md-5">Customized Dedication: </h5>
@@ -192,4 +195,3 @@
 
     </body>
 </html>
-
