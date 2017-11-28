@@ -6,16 +6,15 @@ public class Notebook {
     public pageSize size = pageSize.A5;
     public String dedication = "";
     public paperType paper = paperType.GRID;
+    public coverType cover = coverType.SOFT;
 
-    Notebook(Integer numOfPages, pageSize size, paperType paper, String dedication){
+    Notebook(Integer numOfPages, pageSize size, paperType paper, String dedication, coverType cover){
         this.numOfPages = numOfPages;
         this.size = size;
         this.paper= paper;
         this.dedication = dedication;
-    }
 
-    public Notebook(){
-
+        this.cover = cover;
     }
 
     public void setDedication(String dedication) {
@@ -48,5 +47,12 @@ public class Notebook {
 
     public paperType getPaper() {
         return paper;
+    }
+
+    public void setCover(coverType cover) {
+        this.cover = cover;
+    }
+    public coverType getCover() {
+        return cover;
     }
 }

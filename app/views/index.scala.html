@@ -34,7 +34,7 @@
                             <img src="@routes.Assets.at("images/logo1.png")" alt="DesigNote logo" class="hidden-xs hidden-sm">
                         </a>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="@routes.Application.index()">Home</a></li>
+                        <li><a href="@routes.Application.index()">Home</a></li>
                             <li><a href="@routes.CartController.transaction()">Cart</a></li>
 
                         </ul>
@@ -76,10 +76,11 @@
 
             <div id="designLeft"  >
                 <input type="file" id="inputCover"/>
-                <div id="drop-area" ondragover="allowDrop(event)" ondrop="ondropImage(event)">
 
-                    <img id="userImage" src="@routes.Assets.at("images/covers/cover1.jpg")" alt=""/>
-                </div>
+                    <div id="drop-area" ondragover="allowDrop(event)" ondrop="ondropImage(event)">
+
+                   <img id="userImage" src="@routes.Assets.at("images/covers/cover1.jpg")" alt=""/>
+                    </div>
             </div>
 
             <div id="designRight"   class="col-md-3" >
@@ -94,8 +95,8 @@
                                 <option value="100">100</option>
                             </select>
                         </p>
-                    </div>
-                    <div  class="row">
+               </div>
+               <div  class="row">
                         <h5 class="col-md-3" >Cover : </h5>
                         <div class="radioBtns">
                             <input type="radio" value="hard"  name="cover">Hard
@@ -105,12 +106,12 @@
                     </div>
                     <div  class="row">
 
-                        <h5 class="col-md-3" >Size : </h5>
-                        <div class="radioBtns">
-                            <input type="radio" value="a6" name="size" >Small A6
-                            <input type="radio" value="a5" name="size" >Medium A5
-                            <input type="radio" value="a4" name="size" label="Large A4">Large A4
-                        </div>
+                            <h5 class="col-md-3" >Size : </h5>
+                            <div class="radioBtns">
+                                <input type="radio" value="a6" name="size" >Small A6
+                                <input type="radio" value="a5" name="size" >Medium A5
+                                <input type="radio" value="a4" name="size" label="Large A4">Large A4
+                            </div>
 
                     </div>
                     <div  class="row">
@@ -141,17 +142,17 @@
         </div> <!-- main div -->
 
         <footer>
-            <div id="footer">
-                <div class="container">
-                    <div class="col-md-12">
-                        <p class="pull-left">&copy; 2017 DesigNote</p>
-                        <p class="pull-right">Footer by <a href="https://bootstrapious.com">Bootstrapious</a> & <a href="https://fity.cz">Fity.cz </a>with support from <a href="https://kakusei.cz">Kakusei</a>
-                                <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
-                        </p>
+        <div id="footer">
+            <div class="container">
+                <div class="col-md-12">
+                    <p class="pull-left">&copy; 2017 DesigNote</p>
+                    <p class="pull-right">Footer by <a href="https://bootstrapious.com">Bootstrapious</a> & <a href="https://fity.cz">Fity.cz </a>with support from <a href="https://kakusei.cz">Kakusei</a>
+                            <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
+                    </p>
 
-                    </div>
                 </div>
             </div>
+        </div>
         </footer>
 
     </body>
