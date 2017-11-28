@@ -1,27 +1,43 @@
-body{
-    background-color: #b7fad9;
+#body{
+    background-color: #a4fad6;
 }
 
 #footer{
     position: fixed;
+    bottom: 0;
+    padding-bottom: 0;
     z-index: 1;
+    background-color: grey;
+}
+.container{
+    position: fixed;
+    bottom: 0;
 }
 
 #designLeft
 {
-    text-align:center;
-    padding:0px;
-    margin: 1%;
+    padding:0;
+    margin: 0.5%;
+    float: left ;
 }
+
+#userImage{
+    height: 100%;
+    width: 100%;
+   /* object-fit: contain;*/
+}
+
 #drop-area
 {
     margin-top:30px;
     margin-left:8%;
-    width:400px;
-    height:250px;
+    width: 200px !important;
+    height:300px;
     background-color:white;
     border:3px dashed grey;
+    padding: 1%;
 }
+
 .drop-text
 {
     margin-top:100px;
@@ -36,34 +52,53 @@ body{
 }
 
 #mains div{
-    width:530px;
+    width: 500px;
+    margin-top: 5%;
     margin-left: 20px;
     margin-right:20px;
-    float: left;
+    margin-bottom: 0;
+
 }
 
 #designLeft div{
+    margin-left: 30%;
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
-
 .radioBtns input{
     margin-left: 20px;
     margin-right: 20px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .clear{
     clear: both;
 }
 
-#AddCart{
-    margin-top: 30px;
-    margin-bottom: 80px;
+.cover{
+    margin-left: 30%;
+    margin-bottom: 8px;
+    width: 50%;
 }
 
+#covers{
+    margin-bottom: 100%;
+    padding-bottom: 38%;
+}
+
+<<<<<<< HEAD
 #fileInput{
     margin-left: 65px;
 }
 
+=======
+#numOfPages{
+    padding-top: 3%;
+}
+
+#AddCart{
+    padding-right: 80%;
+    padding-top: 5%;
+}
+>>>>>>> 0da371cd3562d53fdbd0129f4e4de59fbf8e731c
