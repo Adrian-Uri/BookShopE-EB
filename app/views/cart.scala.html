@@ -1,3 +1,4 @@
+
 @(notebook: Form[Notebook])
 
 
@@ -19,11 +20,9 @@
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/payment.css")">
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/cart.css")">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-     @*   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+        @*   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/1.2.3/jquery.payment.min.js"></script>*@
-        <script src="https://www.paypalobjects.com/api/checkout.js"></script>
-        <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.js")"></script>
-        <script type="text/javascript" src="@routes.Assets.at("javascripts/payment.js")"></script>
+
     </head>
 
     <body>
@@ -42,7 +41,6 @@
                     </a>
 
                     <ul class="nav navbar-nav navbar-right">
-
                         <li><a href="@routes.Application.index()">Home</a></li>
                         <li><a href="@routes.CartController.transaction()">Cart</a></li>
 
@@ -51,19 +49,22 @@
             </div>
         </div>
         </header>
+       <script>
 
+       </script>
         <div class="container wrapper">
             <div class="row cart-head">
                 <div class="container">
                     <div class="row">
                         <p></p>
+
                     </div>
                     @*<div class="row">
-                        <div style="display: table; margin: auto;">
-                            <span class="step step_complete"> <a href="#" class="check-bc">Cart</a> <span class="step_line step_complete"> </span> <span class="step_line backline"> </span> </span>
-                            <span class="step step_complete"> <a href="#" class="check-bc">Checkout</a> <span class="step_line "> </span> <span class="step_line step_complete"> </span> </span>
-                            <span class="step_thankyou check-bc step_complete">Thank you</span>
-                        </div>
+                    <div style="display: table; margin: auto;">
+                    <span class="step step_complete"> <a href="#" class="check-bc">Cart</a> <span class="step_line step_complete"> </span> <span class="step_line backline"> </span> </span>
+                    <span class="step step_complete"> <a href="#" class="check-bc">Checkout</a> <span class="step_line "> </span> <span class="step_line step_complete"> </span> </span>
+                    <span class="step_thankyou check-bc step_complete">Thank you</span>
+                    </div>
                     </div>*@
                     <div class="row">
                         <p></p>
@@ -78,7 +79,7 @@
                         <div class="panel panel-info">
                             <div class="panel-heading">
                             Review Order <div class="pull-right"><small><a class="afix-1" href="@routes.Application.index()">Edit Notebook</a></small></div>
-                        </div>
+                            </div>
                             <div class="panel-body">
                                 <div class="form-group">
                                     <div class="col-sm-3 col-xs-3">
@@ -125,16 +126,20 @@
                                     </div>
                                 </div>
                                 <div id="paypal-button-container">
-                               @* <input type="image" name="submit" border="0"
-                                src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_buynow_107x26.png"
-                                alt="Buy Now">
-                                <img alt="" border="0" width="1" height="1"
-                                src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >*@
-                                <div id="paypal-button"></div>
+                                    @* <input type="image" name="submit" border="0"
+                               src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_buynow_107x26.png"
+                               alt="Buy Now">
+                               <img alt="" border="0" width="1" height="1"
+                               src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >*@
+                                    <div id="paypal-button"></div>
                                 </div>
+                                <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.js")"></script>
+                                <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+                                <script type="text/javascript" src="@routes.Assets.at("javascripts/payment.js")"></script>
+
                             </div>
                         </div>
-                            <!--REVIEW ORDER END-->
+                        <!--REVIEW ORDER END-->
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
                             <!--SHIPPING METHOD-->
@@ -197,8 +202,8 @@
                                 </div>
                             </div>
                         </div>
-                            <!--SHIPPING METHOD END-->
-                            <!--CREDIT CART PAYMENT-->
+                        <!--SHIPPING METHOD END-->
+                        <!--CREDIT CART PAYMENT-->
                         <div class="panel panel-info">
                             <div class="panel-heading"><span><i class="glyphicon glyphicon-lock"></i></span> Secure Payment</div>
                             <div class="panel-body">
@@ -277,13 +282,13 @@
 
                                         @*<form action="https://www.paypal.com/cgi-bin/webscr" method="post">*@
                                         <button type="submit" class="btn btn-primary btn-submit-fix">Place Order</button>
-                                            <!-- Display the payment button. -->
+                                        <!-- Display the payment button. -->
 
                                     </div>
                                 </div>
                             </div>
                         </div>
-                            <!--CREDIT CART PAYMENT END-->
+                        <!--CREDIT CART PAYMENT END-->
                     </div>
 
                 </form>
@@ -299,8 +304,8 @@
                     <div class="col-md-12">
                         <p class="pull-left">&copy; 2017 DesigNote</p>
                         <p class="pull-right">Footer by <a href="https://bootstrapious.com">Bootstrapious</a> & <a href="https://fity.cz">Fity.cz</a>with support from <a href="https://kakusei.cz">Kakusei</a>
-                                <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
-                    </p>
+                            <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
+                        </p>
 
                     </div>
                 </div>
@@ -308,5 +313,6 @@
         </footer>
     </body>
 </html>
+
 
 

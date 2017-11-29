@@ -150,7 +150,7 @@ var readyInterval = setInterval(function() {
 
 paypal.Button.render({
 
-    env: 'production', // Or 'sandbox'
+    env: 'sandbox', // Or 'sandbox'
 
     client: {
         sandbox:    'AUdDTZIkDH-KCW0RitsefyvSc1le8D49cxxVApJFBp4t27RO44R9m72U46Q3ImzT9d0Csg36-VuRvvhm',
@@ -160,8 +160,7 @@ paypal.Button.render({
     style: {
         size: 'small',
         color: 'gold',
-        shape: 'pill',
-        label: 'Pay'
+        shape: 'pill'
     },
     commit: true, // Show a 'Pay Now' button
 
@@ -179,7 +178,6 @@ paypal.Button.render({
 
     onAuthorize: function(data, actions) {
         return actions.payment.execute().then(function(payment) {
-            window.alert('Payment Complete!');
         });
     }
 
