@@ -54,6 +54,7 @@ public class Notebook {
     public coverType getCover() {
         return cover;
     }
+
     public void  setImageId(String id){
         this.imageId = id;
     }

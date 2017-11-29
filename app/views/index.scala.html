@@ -84,6 +84,7 @@
                     <div id="drop-area" ondragover="allowDrop(event)" ondrop="ondropImage(event)">
                    <img id="userImage" src="@routes.Assets.at("images/covers/cover01.jpg")" alt=""/>
                     </div>
+
             </div>
 
             <div id="designRight"   class="col-md-3" >
@@ -102,28 +103,32 @@
                        @helper.inputRadioGroup(
                            notebookForm("cover"),
                            options = Seq("HARD"-> "HARD", "SOFT"->"SOFT"),
-                           '_label -> "Type of peper"
+                           '_label -> "Type of cover"
                        )
                         @helper.inputRadioGroup(
                        notebookForm("paper"),
                        options = Seq("BLANK"-> "BLANK", "LINED"->"LINED", "GRID"->"GRID"),
                        '_label -> "Type of paper"
                      )
-                        @helper.inputText(
+
+                    @helper.inputText(
                             notebookForm("dedication"),
-                            '_label -> "Your own dedication"
+                            '_label -> "Your own dedication",
+                            'style -> "padding: 1px; marginBottom: 1px;",
+                            'id -> "dedication"
 
                         )
-                   <div id="AddCart" >
-                       <input type="submit" value="Buy" id="btnAddToCart">
-                   </div>
 
-                   <script>
-                       $("#btnAddToCart").hover( function() {
-                           var src = $("userImage").attr("src");
-                           notebookForm.fill("imageId", src)
-                       });
-                   </script>
+                        <input type="submit" value="Buy" id="btnAddToCart">
+
+                   @helper.inputText(
+                       notebookForm("imageId"),
+                       '_label -> null,
+                       'style -> "display: none",
+                       'id -> "imageId"
+
+                   )
+
                   @*  <div  id="numOfPages">
                         <p >Number of pages :
                             <select name="NPages">

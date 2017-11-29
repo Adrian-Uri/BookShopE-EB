@@ -21,25 +21,26 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
+/*
 var $form = $('#payment-form');
 $form.find('.subscribe').on('click', payWithStripe);
 
-/* If you're using Stripe for payments */
+/!* If you're using Stripe for payments *!/
 function payWithStripe(e) {
     e.preventDefault();
 
-    /* Abort if invalid form data */
+    /!* Abort if invalid form data *!/
     if (!validator.form()) {
         return;
     }
 
-    /* Visual feedback */
+    /!* Visual feedback *!/
     $form.find('.subscribe').html('Validating <i class="fa fa-spinner fa-pulse"></i>').prop('disabled', true);
 
     var PublishableKey = 'pk_test_6pRNASCoBOKtIshFeQd4XMUh'; // Replace with your API publishable key
     Stripe.setPublishableKey(PublishableKey);
 
-    /* Create token */
+    /!* Create token *!/
     var expiry = $form.find('[name=cardExpiry]').payment('cardExpiryVal');
     var ccData = {
         number: $form.find('[name=cardNumber]').val().replace(/\s/g,''),
@@ -50,15 +51,15 @@ function payWithStripe(e) {
 
     Stripe.card.createToken(ccData, function stripeResponseHandler(status, response) {
         if (response.error) {
-            /* Visual feedback */
+            /!* Visual feedback *!/
             $form.find('.subscribe').html('Try again').prop('disabled', false);
-            /* Show Stripe errors on the form */
+            /!* Show Stripe errors on the form *!/
             $form.find('.payment-errors').text(response.error.message);
             $form.find('.payment-errors').closest('.row').show();
         } else {
-            /* Visual feedback */
+            /!* Visual feedback *!/
             $form.find('.subscribe').html('Processing <i class="fa fa-spinner fa-pulse"></i>');
-            /* Hide Stripe errors on the form */
+            /!* Hide Stripe errors on the form *!/
             $form.find('.payment-errors').closest('.row').hide();
             $form.find('.payment-errors').text("");
             // response contains id and card, which contains additional card details
@@ -75,25 +76,25 @@ function payWithStripe(e) {
                 })
                 .fail(function(jqXHR, textStatus, errorThrown) {
                     $form.find('.subscribe').html('There was a problem').removeClass('success').addClass('error');
-                    /* Show Stripe errors on the form */
+                    /!* Show Stripe errors on the form *!/
                     $form.find('.payment-errors').text('Try refreshing the page and trying again.');
                     $form.find('.payment-errors').closest('.row').show();
                 });
         }
     });
 }
-/* Fancy restrictive input formatting via jQuery.payment library*/
+/!* Fancy restrictive input formatting via jQuery.payment library*!/
 $('input[name=cardNumber]').payment('formatCardNumber');
 $('input[name=cardCVC]').payment('formatCardCVC');
 $('input[name=cardExpiry').payment('formatCardExpiry');
 
-/* Form validation using Stripe client-side validation helpers */
+/!* Form validation using Stripe client-side validation helpers *!/
 jQuery.validator.addMethod("cardNumber", function(value, element) {
     return this.optional(element) || Stripe.card.validateCardNumber(value);
 }, "Please specify a valid credit card number.");
 
 jQuery.validator.addMethod("cardExpiry", function(value, element) {
-    /* Parsing month/year uses jQuery.payment library */
+    /!* Parsing month/year uses jQuery.payment library *!/
     value = $.payment.cardExpiryVal(value);
     return this.optional(element) || Stripe.card.validateExpiry(value.month, value.year);
 }, "Invalid expiration date.");
@@ -145,3 +146,41 @@ var readyInterval = setInterval(function() {
         clearInterval(readyInterval);
     }
 }, 250);
+*/
+
+paypal.Button.render({
+
+    env: 'production', // Or 'sandbox'
+
+    client: {
+        sandbox:    'AUdDTZIkDH-KCW0RitsefyvSc1le8D49cxxVApJFBp4t27RO44R9m72U46Q3ImzT9d0Csg36-VuRvvhm',
+        production: 'AV9xx_CQkKmff0dOrxPcG538IA4_c_v_vMoj9lyVceo-FUqPoio_ns097rgRJBoGXuhgZmOZQq1kmUh5'
+    },
+
+    style: {
+        size: 'small',
+        color: 'gold',
+        shape: 'pill',
+        label: 'Pay'
+    },
+    commit: true, // Show a 'Pay Now' button
+
+    payment: function(data, actions) {
+        return actions.payment.create({
+            payment: {
+                transactions: [
+                    {
+                        amount: { total: '1.00', currency: 'USD' }
+                    }
+                ]
+            }
+        });
+    },
+
+    onAuthorize: function(data, actions) {
+        return actions.payment.execute().then(function(payment) {
+            window.alert('Payment Complete!');
+        });
+    }
+
+}, '#paypal-button');

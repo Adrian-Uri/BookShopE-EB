@@ -19,4 +19,7 @@ public class CartController extends Controller {
         Form<Notebook> notebookForm = Form.form(Notebook.class).bindFromRequest();
         return ok(cart.render(notebookForm));
     }
+    public Result confirm(){
+        return ok(confirmation.render());
+    }
 }

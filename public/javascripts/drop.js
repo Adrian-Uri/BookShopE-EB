@@ -8,6 +8,7 @@ function allowDrop(ev){
 function ondropImage(ev){
     ev.preventDefault();
     $("#userImage").attr("src",  imageId);
+    $("#imageId").attr('value', imageId);
 }
 
 function drag(dragevent, that){

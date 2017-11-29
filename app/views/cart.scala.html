@@ -19,11 +19,11 @@
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/payment.css")">
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/cart.css")">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/1.2.3/jquery.payment.min.js"></script>
+     @*   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/1.2.3/jquery.payment.min.js"></script>*@
         <script src="https://www.paypalobjects.com/api/checkout.js"></script>
-
-
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/payment.js")"></script>
     </head>
 
     <body>
@@ -52,117 +52,6 @@
         </div>
         </header>
 
-          <!-- If you're using Stripe for payments -->
-       @* <script type="text/javascript" src="https://js.stripe.com/v2/"></script>*@
-
-        @*<div class="container">
-            <div class="col-xs-12 col-md-8" style="font-size: 12pt; line-height: 2em;">
-                <p><h1>models.Notebook features:</h1>
-                <ul>
-                    <li><?
-                    $edad = $_POST["paper"];
-                    echo "Tu edad: $edad";
-                    ?></li>
-
-
-                </ul>
-
-            </div>
-            <div class="row">
-                    <!-- You can make it whatever width you want. I'm making it full width
-             on <= small devices and 4/12 page width on >= medium devices -->
-                <div class="col-xs-12 col-md-4">
-
-
-                        <!-- CREDIT CARD FORM STARTS HERE -->
-                    <div class="panel panel-default credit-card-box">
-                        <div class="panel-heading display-table" >
-                            <div class="row display-tr" >
-                                <h3 class="panel-title display-td" >Payment Details</h3>
-                                <div class="display-td" >
-                                    <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <form role="form" id="payment-form" method="POST" action="javascript:void(0);">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="form-group">
-                                            <label for="cardNumber">CARD NUMBER</label>
-                                            <div class="input-group">
-                                                <input
-                                                type="tel"
-                                                class="form-control"
-                                                name="cardNumber"
-                                                placeholder="Valid Card Number"
-                                                autocomplete="cc-number"
-                                                required autofocus
-                                                />
-                                                <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-7 col-md-7">
-                                        <div class="form-group">
-                                            <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
-                                            <input
-                                            type="tel"
-                                            class="form-control"
-                                            name="cardExpiry"
-                                            placeholder="MM / YY"
-                                            autocomplete="cc-exp"
-                                            required
-                                            />
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-5 col-md-5 pull-right">
-                                        <div class="form-group">
-                                            <label for="cardCVC">CV CODE</label>
-                                            <input
-                                            type="tel"
-                                            class="form-control"
-                                            name="cardCVC"
-                                            placeholder="CVC"
-                                            autocomplete="cc-csc"
-                                            required
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="form-group">
-                                            <label for="couponCode">COUPON CODE</label>
-                                            <input type="text" class="form-control" name="couponCode" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <button class="subscribe btn btn-success btn-lg btn-block" type="button">Pay for your order</button>
-                                    </div>
-                                </div>
-                                <div class="row" style="display:none;">
-                                    <div class="col-xs-12">
-                                        <p class="payment-errors"></p>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                        <!-- CREDIT CARD FORM ENDS HERE -->
-
-
-                </div>
-
-
-
-            </div>
-        </div>*@
-
         <div class="container wrapper">
             <div class="row cart-head">
                 <div class="container">
@@ -182,7 +71,8 @@
                 </div>
             </div>
             <div class="row cart-body">
-                <form class="form-horizontal" method="post" action="">
+
+                <form class="form-horizontal" method="post" action="@routes.CartController.confirm()">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
                             <!--REVIEW ORDER-->
                         <div class="panel panel-info">
@@ -213,14 +103,14 @@
                                         </span></small></div>
                                     </div>
                                     <div class="col-sm-3 col-xs-3 text-right">
-                                        <h6><span>$</span>25.00</h6>
+                                        <h6><span>$</span>20.00</h6>
                                     </div>
                                 </div>
                                 <div class="form-group"><hr /></div>
                                 <div class="form-group">
                                     <div class="col-xs-12">
                                         <strong>Subtotal</strong>
-                                        <div class="pull-right"><span>$</span><span>200.00</span></div>
+                                        <div class="pull-right"><span>$</span><span>5.00</span></div>
                                     </div>
                                     <div class="col-xs-12">
                                         <small>Shipping</small>
@@ -231,8 +121,16 @@
                                 <div class="form-group">
                                     <div class="col-xs-12">
                                         <strong>Order Total</strong>
-                                        <div class="pull-right"><span>$</span><span>150.00</span></div>
+                                        <div class="pull-right"><span>$</span><span>25.00</span></div>
                                     </div>
+                                </div>
+                                <div id="paypal-button-container">
+                               @* <input type="image" name="submit" border="0"
+                                src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_buynow_107x26.png"
+                                alt="Buy Now">
+                                <img alt="" border="0" width="1" height="1"
+                                src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >*@
+                                <div id="paypal-button"></div>
                                 </div>
                             </div>
                         </div>
@@ -377,16 +275,9 @@
                                 <div class="form-group">
                                     <div class="col-md-6 col-sm-6 col-xs-12">
 
-
                                         @*<form action="https://www.paypal.com/cgi-bin/webscr" method="post">*@
-
                                         <button type="submit" class="btn btn-primary btn-submit-fix">Place Order</button>
                                             <!-- Display the payment button. -->
-                                        <input type="image" name="submit" border="0"
-                                        src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_buynow_107x26.png"
-                                        alt="Buy Now">
-                                        <img alt="" border="0" width="1" height="1"
-                                        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
 
                                     </div>
                                 </div>
