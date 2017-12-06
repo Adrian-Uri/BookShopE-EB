@@ -1,3 +1,10 @@
+@(customer: Form[Customer])
+
+
+@import models.Notebook
+@import play.data.Form
+@import views.html.helper.form
+
 <!DOCTYPE html>
 
 <html>
@@ -37,14 +44,16 @@
             </div>
         </div>
     </header>
+    <boody>
     <div class="qlt-confirmation" style="align-self:center">
         <div class="panel panel-default" style="align-self:center">
             <div class="panel-body" style="align-self:center">
                     <img src="https://cdn4.iconfinder.com/data/icons/social-communication/142/open_mail_letter-512.png" style="align-self:center; width:30px; height: 30px;">
-                    <p class="desc">Thank you for placing your order!<br>We have sent you a confirmation of your order.<br>Please visit your <img style="align-self:center; width: 40px; height: 40px" src="http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons/glossy-black-icons-business/080840-glossy-black-icon-business-mailbox.png">.</p>
+                    <p class="desc">Thank you for placing your order,@customer.get().fName!<br>We have sent you a confirmation of your order to @customer.get().email .<br>Please visit your <img style="align-self:center; width: 40px; height: 40px" src="http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons/glossy-black-icons-business/080840-glossy-black-icon-business-mailbox.png">.</p>
             </div>
         </div>
     </div>
+    </boody>
   <footer>
   <div id="footer">
     <div class="container">

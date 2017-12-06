@@ -11,4 +11,4 @@ GET     /                           controllers.Application.index
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
 GET     /cart                       controllers.CartController.transaction()
 POST    /cart                       controllers.CartController.postCart()
-POST     /confirmation               controllers.CartController.confirm()
+POST    /confirmation               controllers.CartController.confirm()
