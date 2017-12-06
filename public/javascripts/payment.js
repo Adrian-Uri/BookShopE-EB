@@ -169,7 +169,7 @@ paypal.Button.render({
             payment: {
                 transactions: [
                     {
-                        amount: { total: '1.00', currency: 'USD' }
+                        amount: { total: '25.00', currency: 'PLN' }
                     }
                 ]
             }
@@ -178,6 +178,8 @@ paypal.Button.render({
 
     onAuthorize: function(data, actions) {
         return actions.payment.execute().then(function(payment) {
+            $("#successAlert").removeClass("hidden");
+
         });
     }
 

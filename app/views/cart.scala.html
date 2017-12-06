@@ -49,9 +49,12 @@
             </div>
         </div>
         </header>
-       <script>
 
-       </script>
+        <div class="alert alert-success fade in hidden" id="successAlert">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Success!</strong> Your payment was completed and confirmation summary was sent to your email.
+        </div>
+
         <div class="container wrapper">
             <div class="row cart-head">
                 <div class="container">
@@ -104,14 +107,14 @@
                                         </span></small></div>
                                     </div>
                                     <div class="col-sm-3 col-xs-3 text-right">
-                                        <h6><span>$</span>20.00</h6>
+                                        <h6>20.00<span>zł</span></h6>
                                     </div>
                                 </div>
                                 <div class="form-group"><hr /></div>
                                 <div class="form-group">
                                     <div class="col-xs-12">
                                         <strong>Subtotal</strong>
-                                        <div class="pull-right"><span>$</span><span>5.00</span></div>
+                                        <div class="pull-right"><span>5.00</span><span>zł</span></div>
                                     </div>
                                     <div class="col-xs-12">
                                         <small>Shipping</small>
@@ -122,7 +125,7 @@
                                 <div class="form-group">
                                     <div class="col-xs-12">
                                         <strong>Order Total</strong>
-                                        <div class="pull-right"><span>$</span><span>25.00</span></div>
+                                        <div class="pull-right"><span>25.00</span><span>zł</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -231,7 +234,7 @@
                         <!--REVIEW ORDER END-->
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
-                            <!--SHIPPING METHOD-->
+                        <!--SHIPPING METHOD-->
                         @helper.form(action = routes.CartController.confirm()) {
                             <div class="panel panel-info">
                                 <div class="panel-heading">Address</div>
@@ -243,110 +246,124 @@
                                     </div>
                                     <div class="col-md-12 form-group">
                                         @*
-                                        <div class="col-md-12"><strong>Country:</strong></div>
-                                        <div class="col-md-12">
-                                            <input type="text" class="form-control" name="country" value="" />
-                                        </div>
-                                            *@
+                                    <div class="col-md-12"><strong>Country:</strong></div>
+                                    <div class="col-md-12">
+                                    <input type="text" class="form-control" name="country" value="" />
+                                </div>
+                                *@
                                         @helper.inputText(
-                                            customerForm("country"),
-                                            '_label -> "Country",
-                                            'id -> "country"
+                                                customerForm("country"),
+                                                '_label -> "Country",
+                                                'id -> "country"
                                         )
                                     </div>
                                     <div class="form-group">
                                         @*
+                                    <div class="col-md-6 col-xs-12">
+                                    <strong>First Name:</strong>
+                                    <input type="text" name="first_name" class="form-control" value="" />
+                                </div>
+                                    <div class="span1"></div>
+                                    <div class="col-md-6 col-xs-12">
+                                    <strong>Last Name:</strong>
+                                    <input type="text" name="last_name" class="form-control" value="" />
+                                </div>
+                                *@
                                         <div class="col-md-6 col-xs-12">
-                                            <strong>First Name:</strong>
-                                            <input type="text" name="first_name" class="form-control" value="" />
-                                        </div>
-                                        <div class="span1"></div>
-                                        <div class="col-md-6 col-xs-12">
-                                            <strong>Last Name:</strong>
-                                            <input type="text" name="last_name" class="form-control" value="" />
-                                        </div>
-                                            *@
-                                        <div class="col-md-6 col-xs-12">
-                                        @helper.inputText(
-                                            customerForm("fName"),
-                                            '_label -> "First Name(*)",
-                                            'id -> "fName",
-                                            'style -> "width: 100%",
-                                            '_showConstraints -> false
-                                        )
+                                            @helper.inputText(
+                                                    customerForm("fName"),
+                                                    '_label -> "First Name",
+                                                    'id -> "fName",
+                                                    'style -> "width: 100%",
+                                                    '_showConstraints -> false
+                                            )
                                         </div>
                                         <div class="col-md-6 col-xs-12 longText">
-                                        @helper.inputText(
-                                            customerForm("lName"),
-                                            '_label -> "Last Name",
-                                            'id -> "lName",
-                                            'style -> "width: 100%"
-                                        )
+                                            @helper.inputText(
+                                                    customerForm("lName"),
+                                                    '_label -> "Last Name",
+                                                    'id -> "lName",
+                                                    'style -> "width: 100%"
+                                            )
                                         </div>
 
                                     </div>
                                     <div class="col-md-12 form-group">
 
-                                    @helper.inputText(
-                                        customerForm("address"),
-                                        '_label -> "Address(*)",
-                                        'id -> "address",
-                                        'style -> "width: 106%",
-                                        '_showConstraints -> false)
+                                        @helper.inputText(
+                                                customerForm("address"),
+                                                '_label -> "Address",
+                                                'id -> "address",
+                                                'style -> "width: 106%",
+                                                '_showConstraints -> false)
 
                                     </div>
                                     <div class="col-md-12 form-group">
-                                    @helper.inputText(
-                                        customerForm("city"),
-                                        '_label -> "City",
-                                        'id -> "city",
-                                        'style -> "width: 106%")
+                                        @helper.inputText(
+                                                customerForm("city"),
+                                                '_label -> "City",
+                                                'id -> "city",
+                                                'style -> "width: 106%")
                                     </div>
                                     <div class="col-md-12 form-group">
-                                    @helper.inputText(
-                                        customerForm("state"),
-                                        '_label -> "State",
-                                        'id -> "state",
-                                        'style -> "width: 106%")
+                                        @helper.inputText(
+                                                customerForm("state"),
+                                                '_label -> "State",
+                                                'id -> "state",
+                                                'style -> "width: 106%")
                                     </div>
                                     <div class="col-md-12 form-group">
-                                    @helper.inputText(
-                                        customerForm("pCode"),
-                                        '_label -> "Zip / Postal Code ",
-                                        'id -> "pCode",
-                                        'style -> "width: 106%")
+                                        @helper.inputText(
+                                                customerForm("pCode"),
+                                                '_label -> "Zip / Postal Code ",
+                                                'id -> "pCode",
+                                                'style -> "width: 106%")
                                     </div>
                                     <div class="col-md-12 form-group">
-                                    @helper.inputText(
-                                        customerForm("pNumber"),
-                                        '_label -> "Phone Number",
-                                        'id -> "pNumber",
-                                        'style -> "width: 106%",
-                                        '_showConstraints -> false)
+                                        @helper.inputText(
+                                                customerForm("pNumber"),
+                                                '_label -> "Phone Number",
+                                                'id -> "pNumber",
+                                                'style -> "width: 106%",
+                                                '_showConstraints -> false)
                                     </div>
                                     <div class="col-md-12 form-group">
-                                    @helper.inputText(
-                                        customerForm("email"),
-                                        '_label -> "Email Address(*)",
-                                        'id -> "email",
-                                        'style -> "width: 106%",
-                                        '_showConstraints -> false
-                                    )
+                                        @helper.inputText(
+                                                customerForm("email"),
+                                                '_label -> "Email Address",
+                                                'id -> "email",
+                                                'style -> "width: 106%",
+                                                '_showConstraints -> false
+                                            )
                                     </div>
-                                    <p>Fields marked with (*) are mandatory</p>
+                                    <div id="paypal-button-container" onclick="submitForm()">
+                                        @* <input type="image" name="submit" border="0"
+                                        src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_buynow_107x26.png"
+                                        alt="Buy Now">
+                                        <img alt="" border="0" width="1" height="1"
+                                        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >*@
+                                        <div id="paypal-button"></div>
+                                    </div>
+                                    <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.js")"></script>
+                                    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+                                    <script type="text/javascript" src="@routes.Assets.at("javascripts/payment.js")"></script>
+
+                                    @*  <div class="col-md-6 col-sm-6 col-xs-12">
+
+                                <button type="submit" class="btn btn-primary btn-submit-fix">Place Order</button>
+
+                            </div>*@
                                 </div>
-
                             </div>
                         }
                         <!--SHIPPING METHOD END-->
-
+                        <!--CREDIT CART PAYMENT-->
+                        <!--CREDIT CART PAYMENT END-->
                     </div>
 
                 </form>
             </div>
-            <div class="row cart-footer">
 
-            </div>
         </div>
 
         <footer>
