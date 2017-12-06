@@ -41,3 +41,10 @@ body { margin-top:20px; }
 .credit-card-box .panel-heading img {
     min-width: 180px;
 }
+.paypalBut{
+    padding: 5%;
+}
+
+.paypalButDiv{
+    margin-bottom: 0px;
+}
